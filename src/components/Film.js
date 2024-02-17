@@ -7,7 +7,7 @@ const Film = (props) => {
 
     useEffect(() => {
         const getFilm = async() => {
-            let filmResult = await DataObj.GetSpeficicFilm(film);
+            let filmResult = await DataObj.GetSpeficic(film);
             setFilmOb(filmResult);
         }
         getFilm();

@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 
 import CharacterContainer from './components/CharacterContainer';
 import DataObj from './fetchData';
+import { Link, Route, Switch } from 'react-router-dom';
+import PlanetContainer from './components/planets/PlanetContainer';
+import NoMatch from './components/NoMatch';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -20,7 +23,7 @@ const App = () => {
   useEffect(() => {
 
     
-    const fetchDataAndSetCharacters = async () => {
+    const getPeople = async () => {
       try {
         console.log(pageNo);
         const data = await DataObj.GetPeople(pageNo);
@@ -38,7 +41,7 @@ const App = () => {
       }
     };
 
-    fetchDataAndSetCharacters();
+    getPeople();
   }, [pageNo]);
 
  const next= ()=>{
@@ -54,7 +57,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <CharacterContainer characters = {characters} />
+      <Link className="nav-links" to="/">Characters</Link>
+      <Link className="nav-links" to="/planets">Planets</Link>
+      <Link className="nav-links" to="/films">Films</Link>
+      <Link className="nav-links" to="/species">Species</Link>
+      <Link className="nav-links" to="/vehicles">Vehicles</Link>
+      <Link className="nav-links" to="/starships">Starships</Link>
+      <Switch>
+        <Route exact path="/">
+          <CharacterContainer characters = {characters} />
+        </Route>
+        <Route path="/planets">
+          <PlanetContainer callplanet={"callplanet"} />
+        </Route>
+        <Route>
+          <NoMatch />
+        </Route>
+      </Switch>
     </div>
   );
 }

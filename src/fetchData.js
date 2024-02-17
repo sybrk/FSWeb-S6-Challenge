@@ -47,7 +47,7 @@ const DataObj = {
         const result = await getRequest(url);
         return result;
     },
-    GetSpeficicFilm: async (url) => {
+    GetSpeficic: async (url) => {
         const result = await getRequest(url);
         return result;
     }
