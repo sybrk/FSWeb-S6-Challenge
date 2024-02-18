@@ -11,7 +11,6 @@ const PlanetContainer = (props) => {
     useEffect(() => {
         const getPlanets = async() => {
             let planetResult = await DataObj.GetPlanets(1)
-            console.log(planetResult)
             setPlanets(planetResult);
         }
         getPlanets();

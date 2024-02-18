@@ -4,7 +4,11 @@ import CharacterContainer from './components/CharacterContainer';
 import DataObj from './fetchData';
 import { Link, Route, Switch } from 'react-router-dom';
 import PlanetContainer from './components/planets/PlanetContainer';
+import FilmContainer from './components/films/FilmContainer';
 import NoMatch from './components/NoMatch';
+import SpeciesContainer from './components/species/SpeciesContainer';
+import VehicleContainer from './components/vehicles/VehicleContainer';
+import StarshipContainer from './components/starships/StarshipContainer';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -67,8 +71,20 @@ const App = () => {
         <Route exact path="/">
           <CharacterContainer characters = {characters} />
         </Route>
-        <Route path="/planets">
+        <Route exact path="/planets">
           <PlanetContainer callplanet={"callplanet"} />
+        </Route>
+        <Route exact path="/films">
+          <FilmContainer callfilm={"callfilm"} />
+        </Route>
+        <Route exact path="/species">
+          <SpeciesContainer callspecies={"callspecies"} />
+        </Route>
+        <Route exact path="/vehicles">
+          <VehicleContainer callvehicle={"callvehicle"} />
+        </Route>
+        <Route exact path="/starships">
+          <StarshipContainer callstarship={"callstarship"} />
         </Route>
         <Route>
           <NoMatch />
