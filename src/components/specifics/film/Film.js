@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DataObj from "../fetchData";
+import DataObj from "../../../fetchData";
 
 const Film = (props) => {
     const {film} = props 

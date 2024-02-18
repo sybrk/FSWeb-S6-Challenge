@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import CharacterContainer from './components/CharacterContainer';
+import CharacterContainer from './components/people/CharacterContainer';
 import DataObj from './fetchData';
 import { Link, Route, Switch } from 'react-router-dom';
 import PlanetContainer from './components/planets/PlanetContainer';

@@ -1,5 +1,6 @@
 import React from "react";
-import Films from "./Films";
+import Films from "../specifics/film/Films";
+import { Title } from "../styled/StyledComponents";
 const Character = (props) => {
     
     const {character} = props;
@@ -8,7 +9,7 @@ const Character = (props) => {
 
     return (
         <>
-            <h1>{name}</h1>
+            <Title> {name} </Title>
             <Films films={films} />
         </>
     )
